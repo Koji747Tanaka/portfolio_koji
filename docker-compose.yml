@@ -1,0 +1,21 @@
+version: '3.9'
+volumes:
+  dev_folio_node_modules: # stg_asset_node_modules:
+  folio_npm_cache:
+
+services:
+  dev:
+    tty: true
+    image: node:18
+    entrypoint: scripts/entrypoint.sh
+    working_dir: /usr/src/app/
+    environment:
+      - COMMAND=${COMMAND:-dev}
+    env_file:
+      - ${ENV_FILE:-.env.dev}
+    volumes:
+      - ./:/usr/src/app/
+      - dev_folio_node_modules:/usr/src/app/node_modules
+      - folio_npm_cache:/root/.npm
+    ports:
+      - "15177:5173"
