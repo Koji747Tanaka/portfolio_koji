@@ -1,11 +1,10 @@
-import { useState } from 'react'
-import './App.css'
+import Container from '@mui/material/Container';
+import Home from './components/Home.jsx';
 
 function App() {
-
   return (
     <>
-      <h1>Koji Portfolio</h1>
+        <Home/>
     </>
   )
 }

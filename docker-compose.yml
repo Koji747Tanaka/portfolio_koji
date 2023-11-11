@@ -14,8 +14,8 @@ services:
     env_file:
       - ${ENV_FILE:-.env.dev}
     volumes:
-      - ./:/usr/src/app/
       - dev_folio_node_modules:/usr/src/app/node_modules
       - folio_npm_cache:/root/.npm
+      - ./:/usr/src/app/
     ports:
       - "15177:5173"
