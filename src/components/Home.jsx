@@ -1,8 +1,9 @@
 import Box from '@mui/material/Box';
+import { forwardRef } from 'react';
 import './Home.css';
-function App() {
+const HomeComponent = forwardRef((props, ref) => {
 return (
-    <div className="background">
+    <div ref={ref} {...props} className="background">
         <Box
             sx={{
             p: 5,
@@ -40,6 +41,6 @@ return (
         </Box>
     </div>
 )
-}
+});
 
-export default App
+export default HomeComponent
