@@ -1,4 +1,3 @@
-import Container from '@mui/material/Container';
 import Home from './components/Home.jsx';
 import React, { useRef, useState, useEffect } from 'react';
 import { Box, Tabs, Tab, AppBar } from '@mui/material';
@@ -6,12 +5,14 @@ import { Box, Tabs, Tab, AppBar } from '@mui/material';
 function App() {
     const [sectionValue, setSectionValue] = useState(0);
     const [tabPosition, setTabPosition] = useState('static');
-    const [lastScrollY, setLastScrollY] = useState(0);
+    const [placeholderHeight, setPlaceholderHeight] =useState(0);
+    const [scrollY, setScrollY] = useState(0);
     const homeRef = useRef(null);
     const aboutRef = useRef(null);
     const experienceRef = useRef(null);
     const contactRef = useRef(null);
     const sectionRefs = [homeRef, aboutRef, experienceRef, contactRef];
+    const appBarRef = useRef(null);
 
     const handleScroll = () => {
         const currentSection = sectionRefs.findIndex((ref) => {
@@ -25,37 +26,45 @@ function App() {
         if (currentSection !== -1) {
           setSectionValue(currentSection);
         }
-        console.log(window.scrollY)
+        // console.log("in handle", window.scrollY)
         const currentScrollY = window.scrollY;
-        if (currentScrollY > lastScrollY) {
-            if (homeRef.current && window.scrollY > homeRef.current.clientHeight) {
-                setTabPosition('fixed');
-            }
-        } else {
-            if (window.scrollY <= homeRef.current.clientHeight) {
-                setTabPosition('static');
-            }
-        }
-        setLastScrollY(currentScrollY);
+        setScrollY(currentScrollY);
     };
+
+    useEffect(() => {
+      const appBarHeight = appBarRef.current.clientHeight;
+      console.log("placeholder", placeholderHeight)
+      if (window.scrollY > homeRef.current.clientHeight) {
+        setTabPosition('fixed');
+        setPlaceholderHeight(appBarHeight);
+        
+      }else{
+        setTabPosition('static');
+        setPlaceholderHeight(0);
+      }
+    }, [scrollY])
   
     useEffect(() => {
         window.addEventListener('scroll', handleScroll);
-        
         return () => {
           window.removeEventListener('scroll', handleScroll);
         };
-    }, [lastScrollY]);
+    }, []);
 
-    const scrollDown = (event, section) => {
+    const scrollThrough = (event, section) => {
         setSectionValue(section);
-        sectionRefs[section].current.scrollIntoView({ behavior: 'smooth' });
+        sectionRefs[section].current.scrollIntoView(
+            { 
+            behavior: 'smooth'
+            }
+        );
     };
 
   return (
     <>
         <Home ref={homeRef} />
         <AppBar 
+        ref={appBarRef}
         position={tabPosition}
         sx=
         {{
@@ -67,13 +76,14 @@ function App() {
           }
         }}
         >
-          <Tabs value={sectionValue} onChange={scrollDown} variant="fullWidth">
+          <Tabs value={sectionValue} onChange={scrollThrough} variant="fullWidth">
               <Tab label="Home"/>
               <Tab label="About" />
               <Tab label="Experience" />
               <Tab label="Contact" />
           </Tabs>
         </AppBar>
+        <div style={{ height: `${placeholderHeight}px` }}></div>
         <Box ref={aboutRef} style={{ height: '100vh', backgroundColor: 'blue'}}>About</Box>
         <Box ref={experienceRef} style={{ height: '100vh', backgroundColor: 'red' }}>Experience</Box>
         <Box ref={contactRef} style={{ height: '100vh', backgroundColor: 'green' }}>Contact</Box>

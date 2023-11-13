@@ -1,6 +1,6 @@
 version: '3.9'
 volumes:
-  dev_folio_node_modules: # stg_asset_node_modules:
+  dev_folio_node_modules:
   folio_npm_cache:
 
 services:
