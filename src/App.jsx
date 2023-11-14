@@ -14,26 +14,8 @@ function App() {
     const sectionRefs = [homeRef, aboutRef, experienceRef, contactRef];
     const appBarRef = useRef(null);
 
-    const handleScroll = () => {
-        const currentSection = sectionRefs.findIndex((ref) => {
-          if (!ref.current) return false;
-          const rect = ref.current.getBoundingClientRect();
-          const visibleHeight = Math.min(rect.bottom, window.innerHeight) - Math.max(rect.top, 0);
-          const totalHeight = ref.current.clientHeight;
-          const isVisibleEnough = (visibleHeight / totalHeight) > 0.7;
-          return isVisibleEnough;
-        })
-        if (currentSection !== -1) {
-          setSectionValue(currentSection);
-        }
-        // console.log("in handle", window.scrollY)
-        const currentScrollY = window.scrollY;
-        setScrollY(currentScrollY);
-    };
-
     useEffect(() => {
       const appBarHeight = appBarRef.current.clientHeight;
-      console.log("placeholder", placeholderHeight)
       if (window.scrollY > homeRef.current.clientHeight) {
         setTabPosition('fixed');
         setPlaceholderHeight(appBarHeight);
@@ -52,13 +34,28 @@ function App() {
     }, []);
 
     const scrollThrough = (event, section) => {
-        setSectionValue(section);
         sectionRefs[section].current.scrollIntoView(
             { 
             behavior: 'smooth'
             }
         );
     };
+
+    const handleScroll = () => {
+      const currentSection = sectionRefs.findIndex((ref) => {
+        if (!ref.current) return false;
+        const rect = ref.current.getBoundingClientRect();
+        const visibleHeight = Math.min(rect.bottom, window.innerHeight) - Math.max(rect.top, 0);
+        const totalHeight = ref.current.clientHeight;
+        const isVisibleEnough = (visibleHeight / totalHeight) > 0.7;
+        return isVisibleEnough;
+      })
+      if (currentSection !== -1) {
+        setSectionValue(currentSection);
+      }
+      const currentScrollY = window.scrollY;
+      setScrollY(currentScrollY);
+  };
 
   return (
     <>
