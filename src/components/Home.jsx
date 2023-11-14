@@ -1,9 +1,9 @@
 import Box from '@mui/material/Box';
 import { forwardRef } from 'react';
-import './Home.css';
+import styles from './Home.module.css';
 const HomeComponent = forwardRef((props, ref) => {
 return (
-    <div ref={ref} {...props} className="background">
+    <div ref={ref} {...props} className={`${styles.background} ${styles.home}`}>
         <Box
             sx={{
             p: 5,
