@@ -1,52 +1,61 @@
 import { forwardRef } from 'react';
 import Box from '@mui/material/Box';
-import styles from './Home.module.css';
+import Button from '@mui/material/Button';
+import styles from './About.module.css';
+import LinkedInIcon from '@mui/icons-material/LinkedIn';
+
 const AboutComponent = forwardRef((props, ref) => {
 return (
-    <div ref={ref} {...props} className={styles.about}>
+    <div ref={ref} {...props} className={`${styles.about}`}>
         <Box
             sx={{
-            p: 5,
+            p: 3,
+            mt: { xs: 5, md: 10 }, // 5 for extra-small (xs) to medium (md), 10 for medium and above
+            mb: { xs: 5, md: 10 }, // Same as mt
             display: 'flex',
             flexDirection: 'column',
-            alignItems: 'flex-end',
+            alignItems: 'center',
             justifyContent: 'center',
-            height: '100%', 
             '& > *': {
-                marginBottom: '2px',
-                marginTop: '2px',
-                textAlign: 'right',
+                textAlign: 'center',
             },
-            '& > h1': {
-                fontSize: '3rem', 
-            },
-            '& > p': {
-                fontSize: '1.0rem'
-            },
-            '@media screen and (min-width: 600px)': {
-                pr: 20,
-                '& > h1': {
-                    fontSize: '6rem', 
-                },
-                '& > p': {
-                    fontSize: '2.0rem'
-                },
-            }
             }}
         >
-            <h1>About page.</h1>
-            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. 
-                Mollitia expedita adipisci harum ut impedit, officiis unde, 
-                veniam, aperiam reiciendis distinctio nesciunt. 
-                Minima est tempore dolor iusto sequi assumenda quaerat ex.</p>
-            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. 
-            Mollitia expedita adipisci harum ut impedit, officiis unde, 
-            veniam, aperiam reiciendis distinctio nesciunt. 
-            Minima est tempore dolor iusto sequi assumenda quaerat ex.</p>
-            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. 
-            Mollitia expedita adipisci harum ut impedit, officiis unde, 
-            veniam, aperiam reiciendis distinctio nesciunt. 
-            Minima est tempore dolor iusto sequi assumenda quaerat ex.</p>
+            
+            <h1>About Me</h1>
+            <div className='aboutMe'>
+                <p>I am currently studying for my Master's degree in Artificial Intelligence 
+                    at Monash University while doing an internship as a software engineer. </p>
+                <p>Before commencing my studies at Monash University, 
+                    I obtained a Bachelor of Engineering degree from Chiba University and 
+                    a Diploma of Software Development from South Metropolitan TAFE. 
+                    My primary area of study during my undergraduate studies was the development of software. 
+                    However, I acquired valuable expertise in neural networks through online certifications, 
+                    which I was able to apply to a project that I worked on as an intern software engineer.</p>
+                <p>I have a passion for applying my knowledge and abilities to contribute to cutting-edge projects 
+                    and resolve challenging issues. I'm always looking for ways to broaden my knowledge 
+                    in the field of software engineering and Machine Learning.</p>
+                <p>I am currently seeking new opportunities in Australia. Let's set up a call to talk about your organisation's needs.</p>
+            </div>
+            <div className={styles.connect}>
+            <Button 
+            variant="contained"
+            href="https://www.linkedin.com/in/koji-tanaka-95a92a265/"
+            target="_blank"
+            startIcon={<LinkedInIcon style={{ fontSize: 30 }} />}
+            sx={{
+                backgroundColor: '#0072b1', 
+                color: '#fff',
+                padding: '6px 16px',
+                textTransform: 'none',
+                '&:hover': {
+                backgroundColor: '#005691',
+                },
+            }}
+            >
+                Connect on Linkedin
+            </Button>
+            </div>
         </Box>
     </div>
 )

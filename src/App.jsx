@@ -4,7 +4,7 @@ import Home from './components/Home.jsx';
 import About from './components/About.jsx';
 
 function App() {
-    const [sectionValue, setSectionValue] = useState(0);
+    const [section, setSection] = useState(0);
     const [tabPosition, setTabPosition] = useState('static');
     const [placeholderHeight, setPlaceholderHeight] =useState(0);
     const [scrollY, setScrollY] = useState(0);
@@ -55,7 +55,7 @@ function App() {
         return isVisibleEnough;
       })
       if (currentSection !== -1) {
-        setSectionValue(currentSection);
+        setSection(currentSection);
       }
       const currentScrollY = window.scrollY;
       setScrollY(currentScrollY);
@@ -82,7 +82,7 @@ function App() {
           zIndex: 1100,
         }}
         >
-          <Tabs value={sectionValue} onChange={scrollThrough} variant="fullWidth"
+          <Tabs value={section} onChange={scrollThrough} variant="fullWidth"
           sx={{
             '.MuiTab-root': {
               fontSize: '1.2rem',
