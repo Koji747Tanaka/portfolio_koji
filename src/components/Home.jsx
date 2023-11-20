@@ -15,7 +15,7 @@ opacity: 1;
 }
 `;
 return (
-    <div ref={ref} {...props} className={`${styles.background} ${styles.home}`}>
+    <div ref={ref} className={`${styles.background} ${styles.home}`}>
         <style>{fadeInOutKeyframes}</style>
         <Box sx={{ 
         position: 'relative', 
@@ -67,6 +67,7 @@ return (
                 color: '#fff',
                 animation: 'fadeInOut 3s infinite',
             }} 
+            onClick={props.scrollToAbout}
             />
         </Box>
     </div>

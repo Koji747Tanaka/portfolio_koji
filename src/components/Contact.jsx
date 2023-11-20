@@ -3,7 +3,7 @@ import styles from './Contact.module.css';
 
 const ContactComponent = forwardRef((props, ref) => {
 return (
-    <div ref={ref} {...props} className={`${styles.contact}`}>
+    <div ref={ref} className={`${styles.contact}`}>
 
     </div>
 )

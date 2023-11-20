@@ -6,7 +6,7 @@ import LinkedInIcon from '@mui/icons-material/LinkedIn';
 
 const AboutComponent = forwardRef((props, ref) => {
 return (
-    <div ref={ref} {...props} className={`${styles.about}`}>
+    <div ref={ref} className={`${styles.about}`}>
         <Box
             sx={{
             p: 3,

@@ -35,18 +35,23 @@ function App() {
     }, []);
 
     const scrollThrough = (event, section) => {
-      
       if (typeof event === "number"){
         section = event;
         event= null;
       }
-
+      
       const appBarHeight = appBarRef.current.clientHeight;
       const element = sectionRefs[section].current;
       // if the page has been scrolled, getBoundingClientRect().top will not account for the scrolled distance, 
       //and will only reflect the distance from the top of the viewport to the element, not the entire document.
       const elementPosition = element.getBoundingClientRect().top + window.scrollY;
-      const offsetPosition = elementPosition - appBarHeight;
+      let offsetPosition = elementPosition - appBarHeight;
+
+      // Adjustment for About section
+      if (section ===1){
+        offsetPosition -= appBarHeight
+      }
+
       window.scrollTo({
           top: offsetPosition,
           behavior: 'smooth'
@@ -54,7 +59,7 @@ function App() {
     };
 
     const scrollToAbout = () =>{
-      scrollThrough(2)
+      scrollThrough(1)
       
     }
 
@@ -82,7 +87,7 @@ function App() {
 
   return (
     <>
-        <Home ref={homeRef} />
+        <Home ref={homeRef} scrollToAbout={scrollToAbout}/>
         <AppBar 
         ref={appBarRef}
         position={tabPosition}
