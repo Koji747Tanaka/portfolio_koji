@@ -1,19 +1,37 @@
 import Box from '@mui/material/Box';
-import { forwardRef } from 'react';
+import { forwardRef, useState, useEffect, useRef } from 'react';
 import styles from './Home.module.css';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 
 const HomeComponent = forwardRef((props, ref) => {
-const fadeInOutKeyframes = `
-@keyframes fadeInOut {
-0%, 100% {
-opacity: 0;
-}
-50% {
-opacity: 1;
-}
-}
-`;
+    const [scrollPosition, setScrollPosition] = useState(0);
+
+    useEffect(() => {
+    const handleScroll = () => {
+        const position = window.scrollY;
+        setScrollPosition(position);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+    }, []);
+
+    const textStyle = {
+    opacity: 1 - scrollPosition / 1000,
+    transform: `translateY(${scrollPosition * 0.5}px)`
+    };
+
+    const fadeInOutKeyframes = 
+    `
+    @keyframes fadeInOut {
+    0%, 100% {
+    opacity: 0;
+    }
+    50% {
+    opacity: 1;
+    }
+    }
+    `;
 return (
     <div ref={ref} className={`${styles.background} ${styles.home}`}>
         <style>{fadeInOutKeyframes}</style>
@@ -42,7 +60,7 @@ return (
                 },
                 '@media screen and (min-width: 600px)': {
                     '& > h1': {
-                        fontSize: '6rem', 
+                        fontSize: '10rem', 
                     },
                     '& > p': {
                         fontSize: '2.0rem'
@@ -50,10 +68,10 @@ return (
                 }
                 }}
             >
-            <p>Hi there, my name is</p>
-            <h1>KOJI</h1>
-            <h1>TANAKA</h1>
-            <p>and I leverage Technology to achive </p>
+            <p style={textStyle}>Hi there, my name is</p>
+            <h1 style={textStyle}>KOJI</h1>
+            <h1 style={textStyle}>TANAKA</h1>
+            <p style={textStyle}>and I leverage Technology to achieve</p>
             </Box>
 
             <KeyboardArrowDownIcon 
