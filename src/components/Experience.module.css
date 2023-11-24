@@ -1,0 +1,9 @@
+.base {
+    background-color: #F0F0F0; 
+    text-align: center;
+    }
+
+.base h1{
+    padding-top: 50px;
+    margin-bottom: 50px;
+}

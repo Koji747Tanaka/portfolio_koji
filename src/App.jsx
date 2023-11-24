@@ -2,6 +2,7 @@ import React, { useRef, useState, useEffect } from 'react';
 import { Box, Tabs, Tab, AppBar } from '@mui/material';
 import Home from './components/Home.jsx';
 import About from './components/About.jsx';
+import Experience from './components/Experience.jsx';
 
 function App() {
     const [section, setSection] = useState(0);
@@ -128,7 +129,7 @@ function App() {
         </AppBar>
         <div style={{ height: `${placeholderHeight}px` }}></div>
         <About ref={aboutRef} />
-        <Box ref={experienceRef} style={{ height: '100vh', backgroundColor: '#858ba1' }}>Experience</Box>
+        <Experience ref={experienceRef} style={{ height: '100vh' }}></Experience>
         <Box ref={contactRef} style={{ height: '100vh', backgroundColor: '#b8c5f5' }}>Contact</Box>
 
     </>

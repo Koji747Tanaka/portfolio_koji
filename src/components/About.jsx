@@ -3,6 +3,7 @@ import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 import styles from './About.module.css';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
+import Brain from './About/Brain'
 
 const AboutComponent = forwardRef((props, ref) => {
 return (
@@ -10,8 +11,8 @@ return (
         <Box
             sx={{
             p: 3,
-            mt: { xs: 5, md: 10 }, // 5 for extra-small (xs) to medium (md), 10 for medium and above
-            mb: { xs: 5, md: 10 }, // Same as mt
+            mt: { xs: 5, md: 10 },
+            mb: { xs: 5, md: 10 }, 
             display: 'flex',
             flexDirection: 'column',
             alignItems: 'center',
@@ -57,6 +58,7 @@ return (
             </Button>
             </div>
         </Box>
+        <Brain/>
     </div>
 )
 });
