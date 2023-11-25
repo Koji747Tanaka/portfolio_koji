@@ -69,7 +69,7 @@ function App() {
         if (!ref.current) return false;
         const rect = ref.current.getBoundingClientRect();
         const visibleHeight = Math.min(rect.bottom, window.innerHeight) - Math.max(rect.top, 0);
-        const totalHeight = ref.current.clientHeight;
+        const totalHeight = window.innerHeight;
         const isVisibleEnough = (visibleHeight / totalHeight) > 0.8;
         return isVisibleEnough;
       })
@@ -101,7 +101,7 @@ function App() {
           zIndex: 1100,
         }}
         >
-          <Tabs value={section} onChange={scrollThrough} variant="fullWidth"
+          <Tabs value={section} onChange={scrollThrough} variant="fullWidth" 
           sx={{
             '.MuiTab-root': {
               fontSize: '1.2rem',

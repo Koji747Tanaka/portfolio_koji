@@ -1,0 +1,8 @@
+.background {
+    /* background-image: url('../../images/background_pic.png');  */
+    background-color: #fff;
+    background-size: cover;
+    background-position: center;
+    /* height: 100vh;  */
+    /* width: 100%;  */
+}

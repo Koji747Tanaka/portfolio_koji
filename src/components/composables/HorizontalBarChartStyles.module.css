@@ -1,0 +1,13 @@
+.container {
+    height: 500px; /* Adjust as needed */
+    width: 90%; /* Adjust as needed */
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.fadeIn {
+    animation: fadeIn 1s ease-out;
+}
