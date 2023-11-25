@@ -10,9 +10,9 @@ return (
     <div ref={ref} className={`${styles.base}`}>
         <Box
             sx={{
-            p: 3,
-            pt: { xs: 5, md: 10 },
-            mb: { xs: 5, md: 10 }, 
+            // p: 3,
+            pt: { xs: 0, md: 10 },
+            mb: { xs: 0, md: 10 }, 
             display: 'flex',
             flexDirection: 'column',
             alignItems: 'center',

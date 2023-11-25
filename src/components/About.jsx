@@ -11,8 +11,8 @@ return (
         <Box
             sx={{
             p: 3,
-            mt: { xs: 5, md: 10 },
-            mb: { xs: 5, md: 10 }, 
+            mt: { xs: 0, md: 10 },
+            mb: { xs: 0, md: 10 }, 
             display: 'flex',
             flexDirection: 'column',
             alignItems: 'center',

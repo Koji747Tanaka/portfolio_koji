@@ -1,9 +1,9 @@
 import {
     BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer, LabelList
 } from 'recharts';
-import skillContents from '../../contents/skillContent';
+// import skillContents from '../../contents/skillContent';
 import styles from './HorizontalBarChartStyles.module.css'
-import React, { useState, useEffect, useRef } from 'react';
+import React, {forwardRef, useState, useEffect, useRef } from 'react';
 
 const customTickFormatter = (value) => {
     const labelMap = {
@@ -14,7 +14,7 @@ const customTickFormatter = (value) => {
     return labelMap[value] || '';
 };
 
-const HorizontalBarChart = () => {
+const HorizontalBarChart = forwardRef((props, ref) => {
     const [animate, setAnimate] = useState(false);
     const chartRef = useRef(null);
 
@@ -43,7 +43,7 @@ const HorizontalBarChart = () => {
             {animate && (
                 <ResponsiveContainer >
                     <BarChart
-                    data={skillContents}
+                    data={props.skillContents}
                     layout="vertical"
                     margin={{ top: 30, right: 20, left: 20, bottom: 100 }}
                     >
@@ -60,6 +60,6 @@ const HorizontalBarChart = () => {
         )}
         </div>
     );
-}
+})
 
 export default HorizontalBarChart;
