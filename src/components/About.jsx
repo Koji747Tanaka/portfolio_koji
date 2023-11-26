@@ -1,18 +1,21 @@
-import { forwardRef } from 'react';
+import { forwardRef, useRef, } from 'react';
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 import styles from './About.module.css';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import Brain from './About/Brain'
+import useIntersectionObserver from './composables/useIntersectionObserver';
 
 const AboutComponent = forwardRef((props, ref) => {
+    const h1Ref = useRef(null);
+    const isH1Visible = useIntersectionObserver(h1Ref);
 return (
     <div ref={ref} className={`${styles.about}`}>
         <Box
             sx={{
-            p: 3,
-            mt: { xs: 0, md: 10 },
-            mb: { xs: 0, md: 10 }, 
+            pt: { xs: 5, md: 10 },
+            pb: { xs: 5, md: 10 }, 
+            height: '100%',
             display: 'flex',
             flexDirection: 'column',
             alignItems: 'center',
@@ -23,8 +26,8 @@ return (
             }}
         >
             
-            <h1>About Me</h1>
-            <div className='aboutMe'>
+            <h1 ref={h1Ref} className={isH1Visible ? 'fadeInUp' : ''}>About Me</h1>
+            <div >
                 <p>I am currently studying for my Master's degree in Artificial Intelligence 
                     at Monash University while doing an internship as a software engineer. </p>
                 <p>Before commencing my studies at Monash University, 

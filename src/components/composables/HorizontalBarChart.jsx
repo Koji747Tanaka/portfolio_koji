@@ -4,6 +4,8 @@ import {
 // import skillContents from '../../contents/skillContent';
 import styles from './HorizontalBarChartStyles.module.css'
 import React, {forwardRef, useState, useEffect, useRef } from 'react';
+import useIntersectionObserver from './useIntersectionObserver';
+
 
 const customTickFormatter = (value) => {
     const labelMap = {
@@ -15,29 +17,8 @@ const customTickFormatter = (value) => {
 };
 
 const HorizontalBarChart = forwardRef((props, ref) => {
-    const [animate, setAnimate] = useState(false);
     const chartRef = useRef(null);
-
-    useEffect(() => {
-        const observer = new IntersectionObserver(entries => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    setAnimate(true);
-                }
-            });
-        }, { threshold: 0.6 }); // Adjust threshold as needed
-
-        if (chartRef.current) {
-            observer.observe(chartRef.current);
-        }
-
-        return () => {
-            if (chartRef.current) {
-                observer.unobserve(chartRef.current);
-            }
-        };
-    }, []);
-
+    const animate = useIntersectionObserver(chartRef)
     return (
         <div ref={chartRef} className={`${styles.container}`}>
             {animate && (

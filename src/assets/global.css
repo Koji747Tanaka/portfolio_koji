@@ -13,7 +13,23 @@ h1{
     font-size: 3.0rem;
 }
 
+.fadeInUp {
+    animation: fadeInUpAnimation 1.5s ease-out forwards;
+}
+
+@keyframes fadeInUpAnimation {
+    from {
+        opacity: 0;
+        transform: translateY(30px); /* Adjust the value as needed */
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
 @media (max-width: 600px) {
     h1{
         font-size: 2.0rem;
     }
+}

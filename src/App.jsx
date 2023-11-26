@@ -3,6 +3,7 @@ import { Box, Tabs, Tab, AppBar } from '@mui/material';
 import Home from './components/Home.jsx';
 import About from './components/About.jsx';
 import Experience from './components/Experience.jsx';
+import Contact from './components/Contact.jsx';
 
 function App() {
     const [section, setSection] = useState(0);
@@ -18,7 +19,7 @@ function App() {
 
     useEffect(() => {
       const appBarHeight = appBarRef.current.clientHeight;
-      if (window.scrollY > homeRef.current.clientHeight) {
+      if (window.scrollY >= homeRef.current.clientHeight) {
         setTabPosition('fixed');
         setPlaceholderHeight(appBarHeight);
         
@@ -50,7 +51,7 @@ function App() {
 
       // Adjustment for About section
       if (section ===1){
-        offsetPosition -= appBarHeight
+        offsetPosition = homeRef.current.clientHeight
       }
 
       window.scrollTo({
@@ -95,13 +96,12 @@ function App() {
         sx=
         {{
           background: 'white', 
-          color: 'black',
-          display: 'flex',
-          justifyContent: 'center', 
-          zIndex: 1100,
+          // color: 'black',
+          // display: 'flex',
+          // justifyContent: 'center', 
         }}
         >
-          <Tabs value={section} onChange={scrollThrough} variant="fullWidth" 
+          <Tabs value={section} onChange={scrollThrough} variant="fullWidth"
           sx={{
             '.MuiTab-root': {
               fontSize: '1.2rem',
@@ -130,7 +130,7 @@ function App() {
         <div style={{ height: `${placeholderHeight}px` }}></div>
         <About ref={aboutRef} />
         <Experience ref={experienceRef} style={{ height: '100vh' }}></Experience>
-        <Box ref={contactRef} style={{ height: '100vh', backgroundColor: '#b8c5f5' }}>Contact</Box>
+        <Contact ref={contactRef} style={{ height: '100vh', backgroundColor: '#b8c5f5' }}></Contact>
 
     </>
   )

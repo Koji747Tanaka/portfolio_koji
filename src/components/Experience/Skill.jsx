@@ -1,19 +1,30 @@
-import { forwardRef,  useState} from 'react';
+import { forwardRef,  useState, useRef} from 'react';
 import styles from './Skill.module.css'
 import HorizontalBarChart from '../composables/HorizontalBarChart';
 import { Box, Tabs, Tab, AppBar } from '@mui/material';
 import  {frontSkillContents, backendMlSkillContents, cloudSkillContents} from '../../contents/skillContent';
+import useIntersectionObserver from '../composables/useIntersectionObserver';
 
 const SkillComponent = forwardRef((props, ref) => {
     const [selectedTab, setSelectedTab] = useState(0);
     const handleTabChange = (event, newValue) => {
         setSelectedTab(newValue);
     };
+
+    const h1Ref = useRef(null);
+    const isH1Visible = useIntersectionObserver(h1Ref);
+
 return (
     <div ref={ref} className={`${styles.background}`} variant="fullWidth">
-        <h1>Skills</h1>
-        {/* <Tabs value={section} onChange={scrollThrough} variant="fullWidth" */}
-        <Tabs  value={selectedTab}  variant="fullWidth" onChange={handleTabChange}
+        <Box
+            sx={{
+            pt: { xs: 0, md: 10 }, 
+            }}
+        >
+            <h1 ref={h1Ref} className={isH1Visible ? 'fadeInUp' : ''}>Skills</h1>
+        </Box>
+
+        <Tabs value={selectedTab} variant="fullWidth" onChange={handleTabChange}
             sx={{
             width: { xs: '90%', sm: '80%', md: '50%' },
             '.MuiTab-root': {

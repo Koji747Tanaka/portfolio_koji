@@ -39,7 +39,7 @@ return (
         partialVisible={true}
     >
         {data.map((item, index) => (
-        <Card key={index} sx={{ minWidth: 200, height: 500, margin: '0 10px', boxShadow: 3 }}>
+        <Card key={index} sx={{ minWidth: 200, height: '65vh', margin: '0 10px', boxShadow: 3 }}>
             <CardContent>
             <Typography variant="h5" component="div">
                 {item.title}

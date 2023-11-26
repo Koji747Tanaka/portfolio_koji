@@ -1,8 +1,12 @@
 .background {
     /* background-image: url('../../images/background_pic.png');  */
-    background-color: #fff;
-    background-size: cover;
+    background-color: #F0F0F0;
     background-position: center;
-    /* height: 100vh;  */
-    /* width: 100%;  */
+    padding-bottom: 10vh;
+
+}
+
+
+.background h1{
+    padding-top: 50px;
 }

@@ -17,7 +17,7 @@ const HomeComponent = forwardRef((props, ref) => {
     }, []);
 
     const textStyle = {
-    opacity: 1 - scrollPosition / 1000,
+    opacity: 1 - scrollPosition / 500,
     transform: `translateY(${scrollPosition * 0.5}px)`
     };
 
@@ -32,6 +32,7 @@ const HomeComponent = forwardRef((props, ref) => {
     }
     }
     `;
+    
 return (
     <div ref={ref} className={`${styles.background} ${styles.home}`}>
         <style>{fadeInOutKeyframes}</style>

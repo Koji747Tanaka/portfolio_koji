@@ -1,0 +1,11 @@
+.background {
+    background-color: #F0F0F0;
+    background-size: cover;
+    background-position: center;
+    height: 100vh
+}
+
+.background h1{
+    /* margin-top: 50px; */
+}
+
