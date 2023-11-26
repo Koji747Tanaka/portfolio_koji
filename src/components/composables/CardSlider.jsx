@@ -44,6 +44,9 @@ return (
             <Typography variant="h5" component="div">
                 {item.title}
             </Typography>
+            <Typography variant="h6" component="div">
+                {item.subtitle}
+            </Typography>
             <Typography variant="body2">
                 {item.description}
             </Typography>

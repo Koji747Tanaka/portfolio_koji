@@ -1,6 +1,6 @@
 import { forwardRef, useRef } from 'react';
 import styles from './WorkExperience.module.css';
-import blogContents from '../../contents/blogContent'
+import workContents from '../../contents/workContent'
 import CardSlider from '../composables/CardSlider';
 import Box from '@mui/material/Box';
 import useIntersectionObserver from '../composables/useIntersectionObserver';
@@ -16,9 +16,9 @@ return (
             pb: { xs: 0, md: 5 }, 
             }}
         >
-            <h1 ref={h1Ref} className={isH1Visible ? 'fadeInUp' : ''}>Academia & Career</h1>
+            <h1 ref={h1Ref} className={isH1Visible ? 'fadeInUp' : ''}>Professional Projects</h1>
         </Box>
-        <CardSlider data={blogContents} />
+        <CardSlider data={workContents} />
     </div>
 )
 });

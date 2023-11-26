@@ -32,14 +32,17 @@ const HomeComponent = forwardRef((props, ref) => {
     }
     }
     `;
-    
+
 return (
     <div ref={ref} className={`${styles.background} ${styles.home}`}>
         <style>{fadeInOutKeyframes}</style>
         <Box sx={{ 
         position: 'relative', 
         height: '100vh',
-        mr:{xs: 3, md: 15}
+        mr:{xs: 3, md: 15},
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'flex-end',
         }}>
             <Box
                 sx={{
@@ -48,6 +51,7 @@ return (
                 alignItems: 'flex-end',
                 justifyContent: 'center',
                 height: '100%', 
+                width: { xs: '60%', sm: '60%', md: '35%' }, 
                 '& > *': {
                     marginBottom: '2px',
                     marginTop: '2px',
@@ -69,10 +73,10 @@ return (
                 }
                 }}
             >
-            <p style={textStyle}>Hi there, my name is</p>
+            <p style={{...textStyle, color: '#13acd6'}}>Hi there, my name is</p>
             <h1 style={textStyle}>KOJI</h1>
             <h1 style={textStyle}>TANAKA</h1>
-            <p style={textStyle}>and I leverage Technology to achieve</p>
+            <p style={textStyle}>and I'd love to write <span style={{color: '#13acd6'}}>code that grow</span> with a company.</p>
             </Box>
 
             <KeyboardArrowDownIcon 
