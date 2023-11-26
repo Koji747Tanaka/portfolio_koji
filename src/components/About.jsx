@@ -27,7 +27,7 @@ return (
         >
             
             <h1 ref={h1Ref} className={isH1Visible ? 'fadeInUp' : ''}>About Me</h1>
-            <div >
+            <div className={`${styles.paragraph}`}>
                 <p>I am currently studying for my Master's degree in Artificial Intelligence 
                     at Monash University while doing an internship as a software engineer. </p>
                 <p>Before commencing my studies at Monash University, 

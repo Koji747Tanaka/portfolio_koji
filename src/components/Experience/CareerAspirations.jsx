@@ -15,8 +15,9 @@ return (
             }}
         ><h1 ref={h1Ref} className={isH1Visible ? 'fadeInUp' : ''}>Career Aspirations</h1>
         </Box>
-        <Box>
-            <div >
+        <Box
+        >
+            <div className={`${styles.paragraph}`}>
                 <p>Balancing my AI studies at university with a role as a Full-stack Software Engineer at an IT company, I am on a vibrant journey at the crossroads of technology and innovation. 
                     My professional path is fueled by a enthusiasm for AI and an insatiable curiosity for all facets of software technology. </p>
                 <p>One of the things I love most about my work is the opportunity to collaborate with people from various backgrounds. 

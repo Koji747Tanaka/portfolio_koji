@@ -30,4 +30,8 @@
     .connect {
         margin-top: 30px;
     }
+
+    .paragraph {
+        line-height: 1.8;
+    }
 }

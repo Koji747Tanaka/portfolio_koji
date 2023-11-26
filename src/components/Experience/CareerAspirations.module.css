@@ -20,6 +20,7 @@
 
 
 
+
 @media (max-width: 600px) {
     .background {
         background-color: #fff;
@@ -38,5 +39,9 @@
 
     .connect {
         margin-top: 30px;
+    }
+
+    .paragraph {
+        line-height: 1.8;
     }
 }

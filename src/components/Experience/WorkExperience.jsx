@@ -16,7 +16,7 @@ return (
             pb: { xs: 0, md: 5 }, 
             }}
         >
-            <h1 ref={h1Ref} className={isH1Visible ? 'fadeInUp' : ''}>Experience & Education</h1>
+            <h1 ref={h1Ref} className={isH1Visible ? 'fadeInUp' : ''}>Academia & Career</h1>
         </Box>
         <CardSlider data={blogContents} />
     </div>
