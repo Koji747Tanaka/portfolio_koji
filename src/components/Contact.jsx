@@ -44,7 +44,7 @@ return (
                 avatar={
                     <Avatar 
                         alt="Koji's picture" 
-                        src="myImage.jpg"
+                        src="images/forContact.png"
                         sx={{ 
                         width: 80, 
                         height: 80,  
@@ -53,6 +53,7 @@ return (
                         left: 'calc(50% - 40px)', 
                         border: '2px solid white', 
                         boxShadow: 3, 
+                        backgroundColor: 'grey',
                         }}
                     />
                 }

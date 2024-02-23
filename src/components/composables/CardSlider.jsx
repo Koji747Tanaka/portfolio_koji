@@ -1,10 +1,11 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
-import { Card, CardContent, Typography } from '@mui/material';
+import { Card, CardContent, Typography, Link } from '@mui/material';
 import './CardSliderStyles.css'; 
 
-const CardSlider = ({ data }) => {
+const CardSlider = ({ data, linkToFullText }) => {
+    
     const responsive = {
         desktop: {
         breakpoint: { max: 3000, min: 1024 },
@@ -23,6 +24,10 @@ const CardSlider = ({ data }) => {
         partialVisibilityGutter: 40 
         }
     };
+
+    const truncateDescription = (description, maxLength = 2) => {
+        return description.length > maxLength ? description.substring(0, maxLength) + "..." : description;
+    }
     
 
 return (
@@ -48,8 +53,13 @@ return (
                 {item.subtitle}
             </Typography>
             <Typography variant="body2">
-                {item.description}
+                {!linkToFullText ? item.description : truncateDescription(item.description)}
             </Typography>
+            {linkToFullText && (
+                <Link component="button" variant="body2">
+                    Read whole description
+                </Link>
+            )}
             </CardContent>
         </Card>
         ))}

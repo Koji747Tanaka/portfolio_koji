@@ -8,7 +8,6 @@ import Contact from './components/Contact.jsx';
 function App() {
     const [section, setSection] = useState(0);
     const [tabPosition, setTabPosition] = useState('static');
-    const [placeholderHeight, setPlaceholderHeight] =useState(0);
     const [scrollY, setScrollY] = useState(0);
     const homeRef = useRef(null);
     const aboutRef = useRef(null);
@@ -16,18 +15,6 @@ function App() {
     const contactRef = useRef(null);
     const sectionRefs = [homeRef, aboutRef, experienceRef, contactRef];
     const appBarRef = useRef(null);
-
-    useEffect(() => {
-      const appBarHeight = appBarRef.current.clientHeight;
-      if (window.scrollY >= homeRef.current.clientHeight) {
-        setTabPosition('fixed');
-        setPlaceholderHeight(appBarHeight);
-        
-      }else{
-        setTabPosition('static');
-        setPlaceholderHeight(0);
-      }
-    }, [scrollY])
   
     useEffect(() => {
         window.addEventListener('scroll', handleScroll);
@@ -41,19 +28,10 @@ function App() {
         section = event;
         event= null;
       }
-      
       const appBarHeight = appBarRef.current.clientHeight;
       const element = sectionRefs[section].current;
-      // if the page has been scrolled, getBoundingClientRect().top will not account for the scrolled distance, 
-      //and will only reflect the distance from the top of the viewport to the element, not the entire document.
       const elementPosition = element.getBoundingClientRect().top + window.scrollY;
       let offsetPosition = elementPosition - appBarHeight;
-
-      // Adjustment for About section
-      if (section ===1){
-        offsetPosition = homeRef.current.clientHeight
-      }
-
       window.scrollTo({
           top: offsetPosition,
           behavior: 'smooth'
@@ -87,19 +65,21 @@ function App() {
     xl: '4rem', 
   }
 
+  const appBarStyles = {
+    position: 'sticky',
+    top: 0, 
+    background: 'white',
+    boxShadow: '0px 3px 6px rgb(222, 223, 227)',
+    zIndex: 10, 
+  };
+
   return (
     <>
         <Home ref={homeRef} scrollToAbout={scrollToAbout}/>
         <AppBar 
         ref={appBarRef}
         position={tabPosition}
-        sx=
-        {{
-          background: 'white', 
-          // color: 'black',
-          // display: 'flex',
-          // justifyContent: 'center', 
-        }}
+        sx={appBarStyles}
         >
           <Tabs value={section} onChange={scrollThrough} variant="fullWidth"
           sx={{
@@ -127,7 +107,6 @@ function App() {
               <Tab label="Contact" />
           </Tabs>
         </AppBar>
-        <div style={{ height: `${placeholderHeight}px` }}></div>
         <About ref={aboutRef} />
         <Experience ref={experienceRef} style={{ height: '100vh' }}></Experience>
         <Contact ref={contactRef} style={{ height: '100vh', backgroundColor: '#b8c5f5' }}></Contact>

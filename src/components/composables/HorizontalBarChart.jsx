@@ -1,7 +1,6 @@
 import {
     BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer, LabelList
 } from 'recharts';
-// import skillContents from '../../contents/skillContent';
 import styles from './HorizontalBarChartStyles.module.css'
 import React, {forwardRef, useState, useEffect, useRef } from 'react';
 import useIntersectionObserver from './useIntersectionObserver';

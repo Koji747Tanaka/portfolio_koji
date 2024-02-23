@@ -1,5 +1,5 @@
 .background {
-    background-image: url('../images/background_pic.png'); 
+    background-image: url('images/desktop_bg.png'); 
     background-size: cover;
     background-position: center;
     height: 100vh; 
@@ -12,5 +12,17 @@
 
   .home h1{
     color: white;
+  }
+
+  @media (max-width: 1400px) {
+    .background {
+      background-image: url('images/ipad_bg.png'); 
+    }
+  }
+
+  @media (max-width: 400px) {
+    .background {
+      background-image: url('images/iphone_bg.png'); 
+    }
   }
 

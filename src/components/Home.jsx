@@ -65,7 +65,7 @@ return (
                 },
                 '@media screen and (min-width: 600px)': {
                     '& > h1': {
-                        fontSize: '10rem', 
+                        fontSize: '6rem', 
                     },
                     '& > p': {
                         fontSize: '2.0rem'

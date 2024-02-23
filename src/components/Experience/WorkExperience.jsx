@@ -18,7 +18,7 @@ return (
         >
             <h1 ref={h1Ref} className={isH1Visible ? 'fadeInUp' : ''}>Professional Projects</h1>
         </Box>
-        <CardSlider data={workContents} />
+        <CardSlider data={workContents} linkToFullText={false}/>
     </div>
 )
 });
