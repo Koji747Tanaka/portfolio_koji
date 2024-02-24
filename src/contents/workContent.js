@@ -1,6 +1,6 @@
 const workContents = [
     { 
-        title: "SEO Optimisation DX", 
+        title: "SEO System DX", 
         subtitle: "Semi-automate manual labour with LLM at CyberOwl", 
         description: "This is the second card.",
         image: "images/dx.png", 

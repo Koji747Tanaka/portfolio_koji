@@ -2,7 +2,7 @@ import { forwardRef } from 'react';
 import WorkExp from './Experience/WorkExperience.jsx';
 import Blog from './Experience/Blog.jsx'
 import Skill from './Experience/Skill.jsx'
-import CareerAspirations from './Experience/CareerAspirations.jsx'
+import CliftonStrengths from './Experience/CliftonStrengths.jsx'
 import styles from './Experience.module.css';
 import { Box, Tabs, Tab, AppBar } from '@mui/material';
 
@@ -12,7 +12,7 @@ return (
         <WorkExp/>
         <Skill/>
         <Blog/>
-        <CareerAspirations/>
+        <CliftonStrengths/>
     </div>
 )
 });
