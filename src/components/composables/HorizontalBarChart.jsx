@@ -9,7 +9,7 @@ import useIntersectionObserver from './useIntersectionObserver';
 const customTickFormatter = (value) => {
     const labelMap = {
         33: 'Amateur',
-        66: 'Proficient',
+        85: 'Proficient',
         100: 'Expert'
     };
     return labelMap[value] || '';
@@ -28,7 +28,7 @@ const HorizontalBarChart = forwardRef((props, ref) => {
                     margin={{ top: 30, right: 20, left: 20, bottom: 100 }}
                     >
                         <CartesianGrid strokeDasharray="3 3" />
-                        <XAxis type="number" dataKey="value" tickFormatter={customTickFormatter} ticks={[33, 66, 100]}/>
+                        <XAxis type="number" dataKey="value" tickFormatter={customTickFormatter} ticks={[33, 85, 100]}/>
                         <YAxis type="category" dataKey="name" hide/>
                         {/* <Tooltip /> */}
                         {/* <Legend /> */}

@@ -1,0 +1,18 @@
+@keyframes slideInFromRight {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+.slide-in {
+    animation: slideInFromRight 2.5s forwards;
+}
+
+.animation-container {
+    overflow-x: hidden;
+  }

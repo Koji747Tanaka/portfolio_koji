@@ -1,5 +1,5 @@
 .background {
-    background-image: url('images/desktop_bg.png'); 
+    background-image: url('images/1.png'); 
     background-size: cover;
     background-position: center;
     height: 100vh; 
@@ -16,13 +16,13 @@
 
   @media (max-width: 1400px) {
     .background {
-      background-image: url('images/ipad_bg.png'); 
+      background-image: url('images/2.png'); 
     }
   }
 
   @media (max-width: 400px) {
     .background {
-      background-image: url('images/iphone_bg.png'); 
+      background-image: url('images/2.png'); 
     }
   }
 

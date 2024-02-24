@@ -2,7 +2,8 @@
     /* background-image: url('../../images/background_pic.png');  */
     background-color: #F0F0F0;
     background-position: center;
-    padding-bottom: 10vh;
+    /* padding-bottom: 10vh; */
+    height: 110vh
 
 }
 
