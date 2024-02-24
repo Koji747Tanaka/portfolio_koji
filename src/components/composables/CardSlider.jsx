@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
-import { Card, CardContent, Typography, Link, CardMedia } from '@mui/material';
+import { Card, CardContent, Typography, Link, CardMedia, Button} from '@mui/material';
 import './CardSliderStyles.css'; 
 import useIntersectionObserver from './useIntersectionObserver';
 
@@ -110,9 +110,12 @@ return (
                     >
                         {!linkToFullText ? item.description : truncateDescription(item.description)}
                         {linkToFullText  && (
-                        <Link component="button" variant="body">
-                            Read this Blog
-                        </Link>
+                        // <Link component="button" variant="body" to='https://www.google.co.uk/'>
+                        //     Read this Blog
+                        // </Link>
+                        <a href="https://www.google.co.uk/"target="_blank" style={{ textDecoration: 'underline'}}>
+                            read this blog
+                        </a>
                         )}
                     </Typography>
                     

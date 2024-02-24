@@ -1,9 +1,9 @@
 const workContents = [
     { 
-        title: "Large Language Model Analysis", 
-        subtitle: "Fine-Tuning and Augmenting LLM at CyberOwl", 
+        title: "SEO Optimisation DX", 
+        subtitle: "Semi-automate manual labour with LLM at CyberOwl", 
         description: "This is the second card.",
-        image: "images/llmAnalysis.png", 
+        image: "images/dx.png", 
 
     },
     { 

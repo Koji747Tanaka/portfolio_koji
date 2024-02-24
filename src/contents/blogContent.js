@@ -21,8 +21,27 @@ const blogContents = [
         threads, semaphores, mutex, and how the Rails web server puma handles multiple requests.`,
         image: "images/rails.png"
     },
-    { title: "Card 3", description: "This is the first card." },
-    { title: "Card 4", description: "This is the second card." },
+    { 
+        title: "Enabling a Large Number of Image Processing", 
+        subtitle: "Understanding Memory Overflow Solutions",
+        description: `I was in charge of implementing the image hosting system at CyberOwl. 
+        During this process, it was discovered that when the Ruby on Rails server performed a large number of image edits simultaneously, 
+        it led to a memory overflow. To address this issue, semaphores were utilised. 
+        In addition to discussing this solution, this article compiles the necessary knowledge about processes, 
+        threads, semaphores, mutex, and how the Rails web server puma handles multiple requests.`,
+        image: "images/imagehosting.png"
+    },
+    { 
+        title: "Machine learning models with BigQuery ML", 
+        subtitle: "Understanding Memory Overflow Solutions",
+        description: `I was in charge of implementing the image hosting system at CyberOwl. 
+        During this process, it was discovered that when the Ruby on Rails server performed a large number of image edits simultaneously, 
+        it led to a memory overflow. To address this issue, semaphores were utilised. 
+        In addition to discussing this solution, this article compiles the necessary knowledge about processes, 
+        threads, semaphores, mutex, and how the Rails web server puma handles multiple requests.`,
+        image: "images/bigqueryML.png"
+    },
+
 ];
 
 export default blogContents;
