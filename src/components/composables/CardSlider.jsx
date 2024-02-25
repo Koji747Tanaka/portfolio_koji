@@ -84,7 +84,15 @@ return (
                 partialVisible={true}
             >
                 {data.map((item, index) => (
-                <Card key={index} sx={{ minWidth: 200, height: '80vh', margin: '15px 10px', boxShadow: 5 ,  borderRadius: '16px'}}>
+                <Card key={index} sx={
+                    { 
+                        minWidth: 200, 
+                        height: '80vh', 
+                        margin: '15px 10px', 
+                        boxShadow: 5 ,  
+                        borderRadius: '16px'
+                    }
+                    }>
                     {item.image && (
                     <CardMedia
                     component="img"
@@ -101,13 +109,21 @@ return (
                         {item.subtitle}
                     </Typography>
                     <Typography 
-                    // variant="body1" 
+                    component="div"
                     sx={{
                         fontSize: { xs: '1rem', sm: '1.1rem', md: '1.25rem' }, 
                         margin: { xs: '20px 5px', sm: '20px 5px', md: '20px 25px'}, 
                         textAlign: 'left'
                     }}
                     >
+                         {item.bullets && item.bullets.length > 0 && (
+                            <ul className='no-bullets bottom-space'>
+                                {item.bullets.map((bullet, idx) => (
+                                    <li key={idx}>{bullet}</li>
+                                ))}
+                            </ul>
+                        )}
+                        
                         {!linkToFullText ? item.description : truncateDescription(item.description)}
                         {linkToFullText  && (
                         <a href="https://www.google.co.uk/"target="_blank" style={{ textDecoration: 'underline'}}>

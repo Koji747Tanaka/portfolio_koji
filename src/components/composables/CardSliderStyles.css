@@ -16,3 +16,12 @@
 .animation-container {
     overflow-x: hidden;
   }
+
+.no-bullets {
+    list-style-type: none;
+    padding: 0;
+}
+
+.bottom-space {
+    padding-bottom: 10px;
+}

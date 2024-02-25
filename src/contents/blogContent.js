@@ -1,6 +1,6 @@
 const blogContents = [
     { 
-        title: "AutoML vs. Humans:", 
+        title: "AutoML vs. Humans", 
         subtitle: "Are Data Scientists Still Needed?",
         description: `Google's machine learning platform, Vertex AI, 
         has introduced AutoML, which automatically selects and tunes machine learning models. 
@@ -22,23 +22,27 @@ const blogContents = [
         image: "images/rails.png"
     },
     { 
-        title: "Enabling a Large Number of Image Processing", 
-        subtitle: "Understanding Memory Overflow Solutions",
-        description: `I was in charge of implementing the image hosting system at CyberOwl. 
-        During this process, it was discovered that when the Ruby on Rails server performed a large number of image edits simultaneously, 
-        it led to a memory overflow. To address this issue, semaphores were utilised. 
-        In addition to discussing this solution, this article compiles the necessary knowledge about processes, 
-        threads, semaphores, mutex, and how the Rails web server puma handles multiple requests.`,
+        title: "Implemente an Image Hosting Service", 
+        subtitle: "Using Ruby on Rails Active Storage",
+        description: `CyberOwl Inc. provides services that heavily utilise images, and I developed an image hosting service for them.
+        It has utilised Ruby as the server-side language and Ruby on Rails as the framework for development. 
+        This article aims to explain the design method of the image hosting service. What is Image Hosting?
+        Image hosting involves using hosting services to improve webpage loading speeds when images are used. 
+        These services work by returning stored images when accessed via specific URLs, allowing web pages to embed images using the img tag. 
+        This service also offers the advantage of easily changing image size, resolution, and format. In our project,`,
         image: "images/imagehosting.png"
     },
     { 
-        title: "Machine learning models with BigQuery ML", 
-        subtitle: "Understanding Memory Overflow Solutions",
-        description: `I was in charge of implementing the image hosting system at CyberOwl. 
-        During this process, it was discovered that when the Ruby on Rails server performed a large number of image edits simultaneously, 
-        it led to a memory overflow. To address this issue, semaphores were utilised. 
-        In addition to discussing this solution, this article compiles the necessary knowledge about processes, 
-        threads, semaphores, mutex, and how the Rails web server puma handles multiple requests.`,
+        title: "Create Machine learning models with BigQuery", 
+        subtitle: "How to Create ML Model Easily",
+        description: `In a business context, I think there are times when data is collected and stored in data warehouses like BigQuery.
+         BigQuery has a feature called BigQuery ML that allows you to create, evaluate, and make predictions with machine learning models 
+         using SQL queries on the stored data. With BigQuery ML, you don't need to build your own infrastructure, and you don't need to 
+         learn libraries like TensorFlow or PyTorch, making it easy to get started with machine learning model creation. You can choose 
+         from a variety of models, from simple ones like linear regression and logistic regression to more complex ones like deep neural networks 
+         and gradient-boosted trees. Additionally, there are features for semi-automating hyperparameter tuning and AutoML Tables, 
+         which automatically selects and tunes models, making it possible to use BigQuery ML even if you're not well-versed in machine learning 
+         algorithms but have knowledge of SQL.`,
         image: "images/bigqueryML.png"
     },
 

@@ -1,0 +1,21 @@
+.background {
+    background-color: #18293b;
+    background-size: cover;
+    background-position: center;
+    padding: 5%;
+}
+
+/* .slideIn {
+    animation: slideIn 1s ease-out forwards;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 1;
+        transform: translateX(1000%);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+} */

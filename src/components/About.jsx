@@ -3,7 +3,7 @@ import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 import styles from './About.module.css';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
-import Brain from './About/Brain'
+import Programming from './About/Programming'
 import useIntersectionObserver from './composables/useIntersectionObserver';
 
 const AboutComponent = forwardRef((props, ref) => {
@@ -61,7 +61,7 @@ return (
             </Button>
             </div>
         </Box>
-        <Brain/>
+        <Programming/>
     </div>
 )
 });
