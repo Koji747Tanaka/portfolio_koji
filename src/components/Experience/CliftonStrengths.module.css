@@ -2,7 +2,7 @@
     background-color: #18293b;
     background-size: cover;
     background-position: center;
-    height:90vh
+    padding-bottom: 10%
 }
 
 .background h1 {
@@ -10,9 +10,11 @@
 }
 
 .center {
+    /* background-color: blue; */
     display: 'flex';
     justify-content: 'center';
     align-items: 'center';
+
 }
 
 

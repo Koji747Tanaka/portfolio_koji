@@ -8,14 +8,14 @@ const CliftonStrengths = forwardRef((props, ref) => {
     const isH1Visible = useIntersectionObserver(h1Ref);
 
     const square = { 
-        xs: '40vw', 
-        sm: '30vw', 
-        md: '25vw', 
-        lg: '15vw' 
+        xs: '100%', 
+        sm: '100%', 
+        md: '100%', 
+        lg: '100%' 
     }
     const commonBoxStyle = {
         width: square,
-        height: square,
+        aspectRatio: '1 / 1',
         color: 'white',
         backgroundColor: 'blue',
         display: 'flex',
@@ -45,22 +45,21 @@ return (
         
         <Box sx={{
             display: 'grid',
-            gridTemplateColumns: { xs: 'repeat(2, 1fr)', md: 'repeat(3, 1fr)' },
-            gridTemplateRows: { xs: 'repeat(3, auto)', md: 'repeat(2, auto)' },
+            gridTemplateColumns: { 
+                xs: 'repeat(auto-fit, 40%)', 
+                sm: 'repeat(auto-fit, 30%)', 
+                md: 'repeat(auto-fit, 30%)', 
+                lg: 'repeat(auto-fit, 30%)' 
+            },
+            justifyContent: 'center',
             gap: {
                 xs: 2,
-                sm: 2,
+                sm: 4,
                 md: 3, 
                 lg: 5
               },
-            width: {
-                xs: 'calc(100% - 16px)', // For phones
-                sm: 'calc(100% - 32px)', // For tablets (including iPads in portrait)
-                md: 'calc(100% - 48px)', // For landscape tablets/small desktops, adjust as necessary
-                lg: 'calc(100% - 64px)' // For larger desktops, adjust as necessary
-              },
-            maxWidth: 'lg', 
-            mx: 'auto', 
+            maxWidth: { sm: '90%',  md: '90%', lg: '60%'  }, 
+            margin: 'auto'
         }}
         >
             { boxes.map((box) => (
