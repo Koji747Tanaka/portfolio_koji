@@ -110,9 +110,6 @@ return (
                     >
                         {!linkToFullText ? item.description : truncateDescription(item.description)}
                         {linkToFullText  && (
-                        // <Link component="button" variant="body" to='https://www.google.co.uk/'>
-                        //     Read this Blog
-                        // </Link>
                         <a href="https://www.google.co.uk/"target="_blank" style={{ textDecoration: 'underline'}}>
                             read this blog
                         </a>

@@ -1,11 +1,15 @@
-import { forwardRef, useRef} from 'react';
+import { forwardRef, useRef, useEffect, useState} from 'react';
 import styles from './CliftonStrengths.module.css';
-import { Box, Tabs, Tab, AppBar } from '@mui/material';
-import useIntersectionObserver from '../composables/useIntersectionObserver';
+import { Box } from '@mui/material';
+import useIntersectionObserver, {useVisibilityChange} from '../composables/useIntersectionObserver';
 
 const CliftonStrengths = forwardRef((props, ref) => {
     const h1Ref = useRef(null);
+    const boxRef = useRef(null);
+    // const isAnimated = useState(false);
+
     const isH1Visible = useIntersectionObserver(h1Ref);
+    const isBoxesVisible = useIntersectionObserver(boxRef);
 
     const square = { 
         xs: '100%', 
@@ -21,16 +25,25 @@ const CliftonStrengths = forwardRef((props, ref) => {
         display: 'flex',
         justifyContent: 'center',
         alignItems: 'center',
+        borderRadius: '7%',
+        opacity: 0,
       };
 
     const boxes = [
-    { id: 1, color: 'green', strength: 'Analytical' },
-    { id: 2, color: 'purple', strength: 'Consistency' },
-    { id: 3, color: 'blue', strength: 'Empathy' },
-    { id: 4, color: 'purple', strength: 'Discipline' },
-    { id: 5, color: 'blue', strength: 'Includer' },
-    { id: 6, color: 'orange', strength: 'communication' },
+        { id: 1, color: '#05a65b', strength: 'Analytical', setOut: 0, direction: 'left' },
+        { id: 2, color: '#cc0e31', strength: 'Consistency', setOut: 500, direction: 'down' },
+        { id: 3, color: '#6280c4', strength: 'Empathy', setOut: 1000, direction: 'right' },
+        { id: 4, color: '#cc0e31', strength: 'Discipline', setOut: 1500, direction: 'down' },
+        { id: 5, color: '#6280c4', strength: 'Includer', setOut: 2000, direction: 'left' },
+        { id: 6, color: '#edb409', strength: 'communication', setOut: 2500, direction: 'right' },
     ];
+
+    const getDirectionClassName = (visibilityState, otherCondition) => {
+        if (visibilityState && otherCondition === 'down') return `${styles.fadeInDown}`;
+        if (visibilityState && otherCondition === 'right') return `${styles.fadeInRight}`;
+        if (visibilityState && otherCondition === 'left') return `${styles.fadeInLeft}`;
+      };
+
 
 return (
     <div ref={ref} className={`${styles.background} ${styles.center}`}>
@@ -43,13 +56,11 @@ return (
             <h1 ref={h1Ref} className={isH1Visible ? 'fadeInUp' : ''}>Clifton Strengths</h1>
         </Box>
         
-        <Box sx={{
+        <Box ref={boxRef} sx={{
             display: 'grid',
             gridTemplateColumns: { 
                 xs: 'repeat(auto-fit, 40%)', 
                 sm: 'repeat(auto-fit, 30%)', 
-                md: 'repeat(auto-fit, 30%)', 
-                lg: 'repeat(auto-fit, 30%)' 
             },
             justifyContent: 'center',
             gap: {
@@ -67,8 +78,10 @@ return (
                 key={box.id}
                 sx={{
                     ...commonBoxStyle,
-                    backgroundColor: box.color
+                    backgroundColor: box.color,
                 }}
+                style={{ animationDelay: `${box.setOut}ms` }} 
+                className={getDirectionClassName(isBoxesVisible, box.direction)}
                 >
                     {box.strength}
                 </Box>
