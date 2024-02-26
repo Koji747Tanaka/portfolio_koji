@@ -6,7 +6,11 @@ const workContents = [
             "Role: Dev Team Leader",
             "Tech: FastAPI, Redis, LLM",
         ],
-        description: "i worked fricking hard",
+        description: `CyberOwl provides a service where clients can obtain articles optimized for SEO performance. 
+        However, the process of analysing keywords on the Search Engine Results Page (SERP) and evaluating articles 
+        against numerous criteria was not only time-consuming but also cost the company thousands of dollars every month. 
+        By leveraging Large Language Models and other Natural Language Processing techniques, 
+        we've managed to automate a significant portion of the operation.`,
         image: "images/dx.png", 
 
     },
@@ -17,7 +21,9 @@ const workContents = [
             "Role: AI Research",
             "Tech: GPT Models, RAG, Embedding",
         ],
-        description: "This is the second card.",
+        description: `OpenAI released API with various features. To understand what LLM is and is not capable of conducting, 
+        I researched how the Transformer based Large Language Model, Retrieved Augumented Generation, and Fine-Tuning work.
+        Also, `,
         image: "images/llmAnalysis.png", 
 
     },

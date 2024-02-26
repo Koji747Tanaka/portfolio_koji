@@ -1,10 +1,42 @@
 .background {
-    background-image: url('images/1.png'); 
+    background-image: url('images/background.png'); 
+    position: relative;
     background-size: cover;
     background-position: center;
     height: 100vh; 
     width: 100%; 
   }
+
+.foregroundImageStyles {
+    position: absolute;
+    bottom: 0;
+    left: 30%;
+    transform: translateX(-60%);
+    /* width: 30vw; */
+    height: 60vh; 
+    background-image: url('images/koji.png');
+    background-size: contain;
+    z-index: 10;
+    background-size: cover;
+  }
+
+@media (max-width: 800px) {
+    .foregroundImageStyles {
+      transform: translateX(-40%);
+        height: 50vh; /* Adjust height automatically or set a specific vh */
+    }
+}
+
+
+/* Adjustments for large screens */
+@media (min-width: 1200px) {
+  .foregroundImageStyles {
+      height: 60vh; 
+  }
+}
+
+
+
 
   .home {
     color: white;
@@ -13,16 +45,3 @@
   .home h1{
     color: white;
   }
-
-  @media (max-width: 1400px) {
-    .background {
-      background-image: url('images/2.png'); 
-    }
-  }
-
-  @media (max-width: 400px) {
-    .background {
-      background-image: url('images/2.png'); 
-    }
-  }
-

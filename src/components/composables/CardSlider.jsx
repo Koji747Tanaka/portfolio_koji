@@ -8,9 +8,13 @@ import useIntersectionObserver from './useIntersectionObserver';
 const CardSlider = ({ data, linkToFullText }) => {
     const [truncateLength, setTruncateLength] = useState(window.innerWidth > 768 ? 600: 300)
     const [hasAnimated, setHasAnimated] = useState(false);
+    
     const [arrowDisplayed, setArrowDisplayed] = useState(false);
     const carouselRef = useRef(null);
     const isCarouselVisible = useIntersectionObserver(carouselRef)
+    
+    const [maxHeight, setMaxHeight] = useState('auto');
+    const cardRefs = useRef(data.map(() => React.createRef()));
 
     useEffect(() => {
         if (isCarouselVisible && !hasAnimated) {
@@ -43,6 +47,22 @@ const CardSlider = ({ data, linkToFullText }) => {
         return () => window.removeEventListener('resize', handleResize)
     }, [])
 
+    useEffect(() => {
+        window.addEventListener('load', updateMaxHeight);
+        return () => {
+          window.removeEventListener('load', updateMaxHeight);
+        };
+      }, []);
+
+    const updateMaxHeight = () => {
+        const maxCardHeight = cardRefs.current.reduce((max, cardRef) => {
+          const currentHeight = cardRef.current ? cardRef.current.offsetHeight : 0;
+          return Math.max(max, currentHeight);
+        }, 0);
+        setMaxHeight(`${maxCardHeight}px`);
+      };
+    
+
     const responsive = {
         desktop: {
         breakpoint: { max: 3000, min: 1024 },
@@ -70,7 +90,7 @@ const CardSlider = ({ data, linkToFullText }) => {
 return (
     <div className="animation-container">
         <div ref={carouselRef} className={`carousel-container ${hasAnimated ? 'slide-in' : ''}`}>
-            { hasAnimated && <Carousel 
+            <Carousel 
                 swipeable={true}
                 draggable={true}
                 responsive={responsive}
@@ -78,25 +98,29 @@ return (
                 keyBoardControl={true}
                 customTransition="all .5s"
                 transitionDuration={500}
-                containerClass="carousel-container "
                 arrows={arrowDisplayed}
                 removeArrowOnDeviceType={["tablet", "mobile"]}
                 partialVisible={true}
             >
                 {data.map((item, index) => (
-                <Card key={index} sx={
+                <Card 
+                key={index} 
+                ref={cardRefs.current[index]}
+                sx={
                     { 
                         minWidth: 200, 
-                        height: '80vh', 
-                        margin: '15px 10px', 
+                        margin: '10px 10px',
                         boxShadow: 5 ,  
-                        borderRadius: '16px'
+                        borderRadius: '16px',
+                        height: maxHeight
                     }
                     }>
                     {item.image && (
                     <CardMedia
                     component="img"
-                    sx={{ height: '40%', width: '100%', pointerEvents: 'none' }}
+                    sx={{ height: { xs: '200px', sm: '250px', md: '300px' },
+                    width: '100%', 
+                    pointerEvents: 'none' }}
                     image={item.image}
                     alt={item.title}
                     />)
@@ -112,7 +136,7 @@ return (
                     component="div"
                     sx={{
                         fontSize: { xs: '1rem', sm: '1.1rem', md: '1.25rem' }, 
-                        margin: { xs: '20px 5px', sm: '20px 5px', md: '20px 25px'}, 
+                        margin: { xs: '20px 5px', sm: '30px 5px', md: '20px 25px'}, 
                         textAlign: 'left'
                     }}
                     >
@@ -136,7 +160,6 @@ return (
                 </Card>
                 ))}
             </Carousel>
-            }
         </div>
     </div>
 );

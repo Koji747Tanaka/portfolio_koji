@@ -25,3 +25,7 @@
 .bottom-space {
     padding-bottom: 10px;
 }
+
+.carousel-container {
+    opacity: 0;
+}

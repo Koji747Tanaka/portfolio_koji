@@ -9,7 +9,7 @@ const BrainComponent = forwardRef((props, ref) => {
 
     const imageProperty = {
         height: {
-            xs: '100px',
+            xs: '70px',
             sm: '100px',
             md: '150px', 
           }, 
