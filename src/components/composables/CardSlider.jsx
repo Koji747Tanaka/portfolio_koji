@@ -112,13 +112,13 @@ return (
                         margin: '10px 10px',
                         boxShadow: 5 ,  
                         borderRadius: '16px',
-                        height: maxHeight
+                        height: maxHeight,
                     }
                     }>
                     {item.image && (
                     <CardMedia
                     component="img"
-                    sx={{ height: { xs: '200px', sm: '250px', md: '300px' },
+                    sx={{ height: { xs: '200px', sm: '250px', md: '300px', lg: '350px' },
                     width: '100%', 
                     pointerEvents: 'none' }}
                     image={item.image}

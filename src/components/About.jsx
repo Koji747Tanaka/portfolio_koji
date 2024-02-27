@@ -14,7 +14,8 @@ return (
         <Box
             sx={{
             pt: { xs: 5, md: 10 },
-            pb: { xs: 5, md: 10 }, 
+            px: { md: 10 },
+            pb: { xs: 5, md: 5 }, 
             height: '100%',
             display: 'flex',
             flexDirection: 'column',
