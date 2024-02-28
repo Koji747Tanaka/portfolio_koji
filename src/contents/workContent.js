@@ -21,9 +21,11 @@ const workContents = [
             "Role: AI Research",
             "Tech: GPT Models, RAG, Embedding",
         ],
-        description: `OpenAI released API with various features. To understand what LLM is and is not capable of conducting, 
-        I researched how the Transformer based Large Language Model, Retrieved Augumented Generation, and Fine-Tuning work.
-        Also, `,
+        description: `To gain a deeper understanding of the capabilities and limitations of Large Language Models (LLMs) and 
+        to understand the possibility of adopting it for projects, 
+        we conducted an in-depth analysis of Transformer-based models, Retrieved Augmented Generation, 
+        and Fine-Tuning techniques. Additionally, we explored various features offered by OpenAI's APIs, 
+        including Beta functions. Furthermore, as part of the 'SEO System DX' project, we carried out prompt engineering analysis.`,
         image: "images/llmAnalysis.png", 
 
     },
@@ -34,7 +36,11 @@ const workContents = [
             "Role: Machie Learning Model Dev",
             "Tech: BigQuery ML",
         ],
-        description: "This is the second card.",
+        description: `CyberOwl Inc. hosts a large number of websites listing thousands of cram schools. 
+        The company gathers extensive data on visitor traffic and user interaction patterns for each tutoring page, 
+        which is stored in BigQuery for analytical purposes. In an effort to predict website impressions, clicks, and conversions, 
+        we have developed machine learning models, such as Deep Neural Networks and XGBoost trees. 
+        The most effective model among these has attained an error rate of approximately 7%.`,
         image: "images/dnnKv.png", 
 
     },
@@ -45,7 +51,10 @@ const workContents = [
             "Role: Front-End Dev",
             "Tech: Vue2.js, Vue3.js",
         ],
-        description: "This is the first card.",
+        description: `When introducing new projects, there is a need to reimplement functions that have already been introduced in other projects, such as creating API key and user management page. 
+        Therefore, CyberOwl Inc. has developed a system that allows developers to create these pages with just a bit of JSON and JavaScript code. 
+        However, this system was developed using Vue2.js, and there are many breaking changes between Vue2.js and Vue3.js. 
+        As a result, I converted it to Vue3.js and introduced the system to the most recent project I worked on.`,
         image: "images/vueplugin.png" 
     },
     { 

@@ -79,6 +79,11 @@ return (
                 sx={{
                     ...commonBoxStyle,
                     backgroundColor: box.color,
+                    fontSize: {
+                        xs: '1rem',
+                        sm: '1.25rem',
+                        md: '1.5rem', 
+                      },
                 }}
                 style={{ animationDelay: `${box.setOut}ms` }} 
                 className={getDirectionClassName(isBoxesVisible, box.direction)}
