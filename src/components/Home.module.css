@@ -1,5 +1,5 @@
 .background {
-    background-image: url('images/background.webp'); 
+    background-image: url('/images/background.webp'); 
     position: relative;
     background-size: cover;
     background-position: center;
@@ -14,7 +14,7 @@
     transform: translateX(-60%);
     /* width: 30vw; */
     height: 60vh; 
-    background-image: url('images/koji.png');
+    background-image: url('/images/koji.png');
     background-size: contain;
     z-index: 10;
     background-size: cover;

@@ -29,18 +29,10 @@ return (
             
             <h1 ref={h1Ref} className={isH1Visible ? 'fadeInUp' : ''}>About Me</h1>
             <div className={`${styles.paragraph}`}>
-                <p>I am currently studying for my Master's degree in Artificial Intelligence 
-                    at Monash University while doing an internship as a software engineer. </p>
-                <p>Before commencing my studies at Monash University, 
-                    I obtained a Bachelor of Engineering degree from Chiba University and 
-                    a Diploma of Software Development from South Metropolitan TAFE. 
-                    My primary area of study during my undergraduate studies was the development of software. 
-                    However, I acquired valuable expertise in neural networks through online certifications, 
-                    which I was able to apply to a project that I worked on as an intern software engineer.</p>
-                <p>I have a passion for applying my knowledge and abilities to contribute to cutting-edge projects 
-                    and resolve challenging issues. I'm always looking for ways to broaden my knowledge 
-                    in the field of software engineering and Machine Learning.</p>
-                <p>I am currently seeking new opportunities in Australia. Let's set up a call to talk about your organisation's needs.</p>
+                <p>I am pursuing a Master's degree in Artificial Intelligence at Monash University and concurrently working as a junior software engineer.</p>
+                <p>Through online certifications and university coursework, I've gained substantial expertise in neural networks, which I've applied to my engineering projects.</p>
+                <p>I'm passionate about leveraging my skills to contribute to innovative projects and tackle complex problems. I'm constantly seeking to expand my knowledge in software engineering and machine learning.</p>
+                <p>I'm on the lookout for new opportunities in Australia and would welcome a discussion about how I can meet your organisation's needs.</p>
             </div>
             <div className={styles.connect}>
             <Button 

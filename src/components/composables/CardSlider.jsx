@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
-import { Card, CardContent, Typography, Link, CardMedia, Button} from '@mui/material';
+import { Card, CardContent, Typography,  CardMedia } from '@mui/material';
 import './CardSliderStyles.css'; 
 import useIntersectionObserver from './useIntersectionObserver';
 
@@ -85,6 +85,46 @@ const CardSlider = ({ data, linkToFullText }) => {
     const truncateDescription = (description, maxLength = truncateLength) => {
         return description.length > maxLength ? description.substring(0, maxLength) + "..." : description + "...";
     }
+
+
+    useEffect(() => {
+        const carousel = carouselRef.current; // Access the current DOM element of the carousel
+        let startX, startY;
+
+        const handleTouchStart = (e) => {
+            startX = e.touches[0].pageX;
+            startY = e.touches[0].pageY;
+        };
+
+        const handleTouchMove = (e) => {
+            const moveX = e.touches[0].pageX;
+            const moveY = e.touches[0].pageY;
+            const diffX = Math.abs(moveX - startX);
+            const diffY = Math.abs(moveY - startY);
+
+            // If horizontal movement is greater than vertical, prevent vertical scrolling
+            if (diffX > diffY) {
+                if (e.cancelable) {
+                    e.preventDefault();
+                }
+
+            }
+        };
+
+        // Adding event listeners
+        if (carousel) {
+            carousel.addEventListener('touchstart', handleTouchStart, { passive: false });
+            carousel.addEventListener('touchmove', handleTouchMove, { passive: false });
+        }
+
+        // Cleanup function to remove event listeners
+        return () => {
+            if (carousel) {
+                carousel.removeEventListener('touchstart', handleTouchStart);
+                carousel.removeEventListener('touchmove', handleTouchMove);
+            }
+        };
+    }, []);
     
 
 return (
@@ -113,12 +153,14 @@ return (
                         boxShadow: 5 ,  
                         borderRadius: '16px',
                         height: maxHeight,
+                        color: 'grey',
+                        fontFamily: 'Montserrat',
                     }
                     }>
                     {item.image && (
                     <CardMedia
                     component="img"
-                    sx={{ height: { xs: '200px', sm: '250px', md: '300px', lg: '350px' },
+                    sx={{ height: { xs: '200px', sm: '250px', md: '300px', lg: '300px' },
                     width: '100%', 
                     pointerEvents: 'none' }}
                     image={item.image}
@@ -126,16 +168,26 @@ return (
                     />)
                     }
                     <CardContent>
-                    <Typography variant="h5" component="div">
+                    <Typography 
+                    component="div"
+                    sx={{
+                        fontSize: { xs: '20px', sm: '23px', md: '25px' }, 
+                    }}
+                    >
                         {item.title}
                     </Typography>
-                    <Typography variant="h6" component="div">
+                    <Typography 
+                    component="div"
+                    sx={{
+                        fontSize: { xs: '18px', sm: '21px', md: '22px' }, 
+                    }}
+                    >
                         {item.subtitle}
                     </Typography>
                     <Typography 
                     component="div"
                     sx={{
-                        fontSize: { xs: '1rem', sm: '1.1rem', md: '1.25rem' }, 
+                        fontSize: { xs: '16px', sm: '19px', md: '20px' }, 
                         margin: { xs: '20px 5px', sm: '30px 5px', md: '20px 25px'}, 
                         textAlign: 'left'
                     }}

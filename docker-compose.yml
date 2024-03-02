@@ -19,3 +19,11 @@ services:
       - ./:/usr/src/app/
     ports:
       - "15177:5173"
+  
+  # prd:
+  #   <<: *dev
+  #   environment:
+  #     - COMMAND=${COMMAND:-build}
+  #     - NODE_ENV=production
+  
+

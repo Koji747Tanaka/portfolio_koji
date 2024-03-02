@@ -19,7 +19,7 @@
 
 
 .fadeInLeft {
-    animation: fadeInLeftAnimation 0.5s;
+    animation: fadeInLeftAnimation 0.3s;
 }
 
 @keyframes fadeInLeftAnimation {
@@ -35,7 +35,7 @@
 
 
 .fadeInRight {
-    animation: fadeInRightAnimation 0.5s;
+    animation: fadeInRightAnimation 0.3s;
 }
 
 @keyframes fadeInRightAnimation {
@@ -51,7 +51,7 @@
 
 
 .fadeInDown {
-    animation: fadeInDownAnimation 0.5s;
+    animation: fadeInDownAnimation 0.3s;
 }
 
 @keyframes fadeInDownAnimation {
@@ -66,7 +66,7 @@
 }
 
 .fadeOutLeft {
-    animation: fadeOutLeftAnimation 0.5s forwards;
+    animation: fadeOutLeftAnimation 0.3s forwards;
 }
 
 @keyframes fadeOutLeftAnimation {
@@ -83,7 +83,7 @@
 
 
 .fadeOutRight {
-    animation: fadeOutRightAnimation 0.5s forwards;
+    animation: fadeOutRightAnimation 0.3s forwards;
 }
 
 @keyframes fadeOutRightAnimation {
@@ -100,7 +100,7 @@
 
 
 .fadeOutDown {
-    animation: fadeOutDownAnimation 0.5s forwards;
+    animation: fadeOutDownAnimation 0.3s forwards;
 }
 
 @keyframes fadeOutDownAnimation {

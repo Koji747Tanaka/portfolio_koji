@@ -1,7 +1,7 @@
 import { forwardRef,  useState, useRef} from 'react';
 import styles from './Skill.module.css'
 import HorizontalBarChart from '../composables/HorizontalBarChart';
-import { Box, Tabs, Tab, AppBar } from '@mui/material';
+import { Box, Tabs, Tab } from '@mui/material';
 import  {frontSkillContents, backendMlSkillContents, cloudSkillContents} from '../../contents/skillContent';
 import useIntersectionObserver from '../composables/useIntersectionObserver';
 
@@ -29,7 +29,6 @@ return (
             width: { xs: '90%', sm: '80%', md: '50%' },
             '.MuiTab-root': {
                 flexGrow: 1,
-                fontSize: '1.2rem',
                 color: '#08090f',
                 textTransform: 'none', 
                 height:20, 

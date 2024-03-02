@@ -1,5 +1,5 @@
 import Box from '@mui/material/Box';
-import { forwardRef, useState, useEffect, useRef } from 'react';
+import { forwardRef, useState, useEffect } from 'react';
 import styles from './Home.module.css';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 

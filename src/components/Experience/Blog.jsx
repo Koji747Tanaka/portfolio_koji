@@ -2,7 +2,7 @@ import { forwardRef, useRef} from 'react';
 import CardSlider from '../composables/CardSlider';
 import styles from './Blog.module.css';
 import blogContents from '../../contents/blogContent'
-import { Box, Tabs, Tab, AppBar } from '@mui/material';
+import { Box } from '@mui/material';
 import useIntersectionObserver from '../composables/useIntersectionObserver';
 
 const BlogComponent = forwardRef((props, ref) => {

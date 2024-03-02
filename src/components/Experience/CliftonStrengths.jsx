@@ -1,7 +1,7 @@
 import { forwardRef, useRef, useEffect, useState} from 'react';
 import styles from './CliftonStrengths.module.css';
 import { Box } from '@mui/material';
-import useIntersectionObserver, {useVisibilityChange} from '../composables/useIntersectionObserver';
+import useIntersectionObserver from '../composables/useIntersectionObserver';
 
 const CliftonStrengths = forwardRef((props, ref) => {
     const h1Ref = useRef(null);

@@ -1,6 +1,6 @@
 import { forwardRef, useRef} from 'react';
 import styles from './Contact.module.css';
-import { Box, Tabs, Tab } from '@mui/material';
+import { Box } from '@mui/material';
 import { Card, CardContent, CardHeader, Avatar } from '@mui/material';
 import useIntersectionObserver from './composables/useIntersectionObserver';
 import LinkedInButton from './composables/LinkedInButton.jsx'

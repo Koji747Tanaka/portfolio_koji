@@ -1,5 +1,5 @@
-import React, { useRef, useState, useEffect, forwardRef } from 'react';
-import { Box, Tabs, Tab, AppBar } from '@mui/material';
+import React, { useRef,  forwardRef } from 'react';
+import { Box } from '@mui/material';
 import styles from './Programming.module.css';
 import useIntersectionObserver from '../composables/useIntersectionObserver';
 
@@ -9,9 +9,9 @@ const BrainComponent = forwardRef((props, ref) => {
 
     const imageProperty = {
         height: {
-            xs: '70px',
-            sm: '100px',
-            md: '150px', 
+            xs: '50px',
+            sm: '70px',
+            md: '100px', 
           }, 
         aspectRatio: '1 / 1',
         maxHeight: { xs: 233, md: 167 }, 

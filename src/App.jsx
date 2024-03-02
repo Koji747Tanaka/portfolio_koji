@@ -84,7 +84,6 @@ function App() {
           <Tabs value={section} onChange={scrollThrough} variant="fullWidth"
           sx={{
             '.MuiTab-root': {
-              fontSize: '1.2rem',
               textTransform: 'none', 
               color: '#08090f',
               height:tabHeight, 
@@ -107,10 +106,11 @@ function App() {
               <Tab label="Contact" />
           </Tabs>
         </AppBar>
-        <About ref={aboutRef} />
-        <Experience ref={experienceRef} style={{ height: '100vh' }}></Experience>
-        <Contact ref={contactRef} style={{ height: '100vh', backgroundColor: '#b8c5f5' }}></Contact>
-
+        <div className="main-container">
+          <About ref={aboutRef} />
+          <Experience ref={experienceRef} style={{ height: '100vh' }}></Experience>
+          <Contact ref={contactRef} style={{ height: '100vh', backgroundColor: '#b8c5f5' }}></Contact>
+        </div>
     </>
   )
 }

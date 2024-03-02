@@ -1,5 +1,5 @@
 import {
-    BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer, LabelList
+    BarChart, Bar, XAxis, YAxis, CartesianGrid, ResponsiveContainer, LabelList
 } from 'recharts';
 import styles from './HorizontalBarChartStyles.module.css'
 import React, {forwardRef, useState, useEffect, useRef } from 'react';
@@ -32,7 +32,7 @@ const HorizontalBarChart = forwardRef((props, ref) => {
                         <YAxis type="category" dataKey="name" hide/>
                         {/* <Tooltip /> */}
                         {/* <Legend /> */}
-                        <Bar dataKey="value" fill="#13acd6" barSize={40} isAnimationActive={animate} animationDuration={1000} >
+                        <Bar dataKey="value" fill="#13acd6" barSize={40} isAnimationActive={animate} animationDuration={800} >
                             <LabelList dataKey="name" position="inside" style={{ fill: 'white' }} className={`${styles.fadeIn}`} />
                         </Bar>
                     </BarChart>
