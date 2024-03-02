@@ -21,18 +21,7 @@ const HomeComponent = forwardRef((props, ref) => {
     transform: `translateY(${scrollPosition * 0.5}px)`
     };
 
-    // const foregroundImageStyles = {
-    //     position: 'absolute',
-    //     bottom: 0, 
-    //     left: '30%',
-    //     transform: 'translateX(-50%)', 
-    //     width: '40vw',
-    //     height: '60vh', 
-    //     backgroundImage: 'url(images/koji.png)',
-    //     backgroundSize: 'contain', 
-    //     backgroundRepeat: 'no-repeat', 
-    //     zIndex: 2, 
-    // };
+
     
       
 
@@ -51,9 +40,7 @@ const HomeComponent = forwardRef((props, ref) => {
 return (
     <div ref={ref} className={`${styles.background} ${styles.home}`}>
         <style>{fadeInOutKeyframes}</style>
-        {/* <img src="images/koji.png" style="width: 30vw; height: auto;" alt="Koji"></img> */}
-        {/* <Box className={`${styles.foregroundImageStyles}`} alt="Person" /> */}
-        <img src="images/koji.png" className={`${styles.foregroundImageStyles}`} alt="Person" />
+        <img src="images/koji.webp" className={`${styles.foregroundImageStyles}`} alt="Person" />
 
 
         <Box sx={{ 

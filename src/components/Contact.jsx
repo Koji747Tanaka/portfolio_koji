@@ -44,7 +44,7 @@ return (
                 avatar={
                     <Avatar 
                         alt="Koji's picture" 
-                        src="images/forContact.png"
+                        src="images/forContact.webp"
                         sx={{ 
                         width: 80, 
                         height: 80,  
