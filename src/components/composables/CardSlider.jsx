@@ -6,7 +6,7 @@ import './CardSliderStyles.css';
 import useIntersectionObserver from './useIntersectionObserver';
 
 const CardSlider = ({ data, linkToFullText }) => {
-    const [truncateLength, setTruncateLength] = useState(window.innerWidth > 768 ? 600: 300)
+    const [truncateLength, setTruncateLength] = useState(window.innerWidth > 768 ? 600: 500)
     const [hasAnimated, setHasAnimated] = useState(false);
     
     const [arrowDisplayed, setArrowDisplayed] = useState(false);
@@ -36,9 +36,9 @@ const CardSlider = ({ data, linkToFullText }) => {
             if (window.innerWidth > 1024){
                 setTruncateLength(600)
             }else if(window.innerWidth > 768){
-                setTruncateLength(450)
+                setTruncateLength(550)
             }else{
-                setTruncateLength(300)
+                setTruncateLength(500)
             }
         };
 
@@ -202,7 +202,7 @@ return (
                         
                         {!linkToFullText ? item.description : truncateDescription(item.description)}
                         {linkToFullText  && (
-                        <a href="https://www.google.co.uk/"target="_blank" style={{ textDecoration: 'underline'}}>
+                        <a href={item.url} target="_blank" style={{ textDecoration: 'underline'}}>
                             read this blog
                         </a>
                         )}

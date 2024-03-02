@@ -20,10 +20,10 @@ const BrainComponent = forwardRef((props, ref) => {
     }
 
     const images = [
-        { id: 1, alt:'python-logo', src:'images/python-logo.png' },
-        { id: 2, alt:'js-logo', src:'images/js-logo.png' },
-        { id: 3, alt:'ruby-logo', src:'images/ruby-logo.png' },
-        { id: 4, alt:'posgre-logo', src:'images/posgre-logo.png' },
+        { id: 1, alt:'python-logo', src:'images/python-logo.webp' },
+        { id: 2, alt:'js-logo', src:'images/js-logo.webp' },
+        { id: 3, alt:'ruby-logo', src:'images/ruby-logo.webp' },
+        { id: 4, alt:'posgre-logo', src:'images/posgre-logo.webp' },
     ];
 
 return (
