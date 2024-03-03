@@ -4,6 +4,7 @@ import Home from './components/Home.jsx';
 import About from './components/About.jsx';
 import Experience from './components/Experience.jsx';
 import Contact from './components/Contact.jsx';
+import { HashRouter as Router} from 'react-router-dom';
 
 function App() {
     const [section, setSection] = useState(0);
@@ -74,44 +75,47 @@ function App() {
   };
 
   return (
-    <>
-        <Home ref={homeRef} scrollToAbout={scrollToAbout}/>
-        <AppBar 
-        ref={appBarRef}
-        position={tabPosition}
-        sx={appBarStyles}
-        >
-          <Tabs value={section} onChange={scrollThrough} variant="fullWidth"
-          sx={{
-            '.MuiTab-root': {
-              textTransform: 'none', 
-              color: '#08090f',
-              height:tabHeight, 
-              fontSize: {
-                xs: '0.8rem', 
-                sm: '0.9rem', 
-                md: '1rem', 
+    <Router>
+      <>
+          <Home ref={homeRef} scrollToAbout={scrollToAbout}/>
+          <AppBar 
+          ref={appBarRef}
+          position={tabPosition}
+          sx={appBarStyles}
+          >
+            <Tabs value={section} onChange={scrollThrough} variant="fullWidth"
+            sx={{
+              '.MuiTab-root': {
+                textTransform: 'none', 
+                color: '#08090f',
+                height:tabHeight, 
+                fontSize: {
+                  xs: '0.8rem', 
+                  sm: '0.9rem', 
+                  md: '1rem', 
+                },
               },
-            },
-            '.MuiTabs-indicator': {
-              backgroundColor: '#13acd6',
-              height: '5px',
-            },
-            boxShadow: '0px 3px 6px rgb(222, 223, 227)',
+              '.MuiTabs-indicator': {
+                backgroundColor: '#13acd6',
+                height: '5px',
+              },
+              boxShadow: '0px 3px 6px rgb(222, 223, 227)',
 
-          }}>
-              <Tab label="Home"/>
-              <Tab label="About" />
-              <Tab label="Experience" />
-              <Tab label="Contact" />
-          </Tabs>
-        </AppBar>
-        <div className="main-container">
-          <About ref={aboutRef} />
-          <Experience ref={experienceRef} style={{ height: '100vh' }}></Experience>
-          <Contact ref={contactRef} style={{ height: '100vh', backgroundColor: '#b8c5f5' }}></Contact>
-        </div>
-    </>
+            }}>
+                <Tab label="Home"/>
+                <Tab label="About" />
+                <Tab label="Experience" />
+                <Tab label="Contact" />
+            </Tabs>
+          </AppBar>
+          <div className="main-container">
+            <About ref={aboutRef} />
+            <Experience ref={experienceRef} style={{ height: '100vh' }}></Experience>
+            <Contact ref={contactRef} style={{ height: '100vh', backgroundColor: '#b8c5f5' }}></Contact>
+          </div>
+        
+      </>
+    </Router>
   )
 }
 
