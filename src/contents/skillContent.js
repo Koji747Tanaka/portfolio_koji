@@ -1,6 +1,6 @@
 const frontSkillContents = [
-    { name: 'HTML', value: 85, skillLevel: 'Amateur' },
-    { name: 'CSS', value: 66, skillLevel: 'Amateur' },
+    { name: 'HTML', value: 85, skillLevel: 'Intermidiate' },
+    { name: 'CSS', value: 66, skillLevel: 'Intermidiate' },
     { name: 'Vue.js', value: 85, skillLevel: 'Proficient' },
     { name: 'React.js', value: 50, skillLevel: 'Proficient' },
 ];

@@ -31,11 +31,11 @@ const CliftonStrengths = forwardRef((props, ref) => {
 
     const boxes = [
         { id: 1, color: '#05a65b', strength: 'Analytical', setOut: 0, direction: 'left' },
-        { id: 2, color: '#cc0e31', strength: 'Consistency', setOut: 500, direction: 'down' },
-        { id: 3, color: '#6280c4', strength: 'Empathy', setOut: 1000, direction: 'right' },
-        { id: 4, color: '#cc0e31', strength: 'Discipline', setOut: 1500, direction: 'down' },
-        { id: 5, color: '#6280c4', strength: 'Includer', setOut: 2000, direction: 'left' },
-        { id: 6, color: '#edb409', strength: 'communication', setOut: 2500, direction: 'right' },
+        { id: 2, color: '#cc0e31', strength: 'Consistency', setOut: 400, direction: 'down' },
+        { id: 3, color: '#6280c4', strength: 'Empathy', setOut: 800, direction: 'right' },
+        { id: 4, color: '#cc0e31', strength: 'Discipline', setOut: 1200, direction: 'down' },
+        { id: 5, color: '#6280c4', strength: 'Includer', setOut: 1600, direction: 'left' },
+        { id: 6, color: '#edb409', strength: 'Communication', setOut: 2000, direction: 'right' },
     ];
 
     const getDirectionClassName = (visibilityState, otherCondition) => {
